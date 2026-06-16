@@ -1,0 +1,170 @@
+{
+  "Fiberglass Yarns (C Grade)": {
+    "ai_product_type": "Textile Raw Materials",
+    "ai_material": "Fiberglass",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Perforated Dye Cones": {
+    "ai_product_type": "Dyes & Chemicals",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Bobbin Winder": {
+    "ai_product_type": "Textile Machinery",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Thread Drying Heater": {
+    "ai_product_type": "Textile Machinery",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Fabric Yarn Baler": {
+    "ai_product_type": "Textile Machinery",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Fabric Density Meter": {
+    "ai_product_type": "Test Equipment",
+    "ai_material": null,
+    "ai_use_case": "Quality Testing",
+    "ai_business_role": "Service Provider"
+  },
+  "Yarn Count Testing Services": {
+    "ai_product_type": "Test Equipment",
+    "ai_material": null,
+    "ai_use_case": "Quality Testing",
+    "ai_business_role": "Service Provider"
+  },
+  "Viscose Rayon Embroidery Yarn (Jumbo)": {
+    "ai_product_type": "Textiles",
+    "ai_material": "Viscose Rayon",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "PTFE Coated Fiberglass Yarn": {
+    "ai_product_type": "Industrial Textiles",
+    "ai_material": "Fiberglass",
+    "ai_use_case": null,
+    "ai_business_role": "Supplier"
+  },
+  "Sisal Dyed Coloured Yarn": {
+    "ai_product_type": "Textiles",
+    "ai_material": "Sisal",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Green Reactive HE Dyes For Cotton Yarn": {
+    "ai_product_type": "Dyes & Chemicals",
+    "ai_material": "Cotton Yarn",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Yarn Dyed Suiting Fabric": {
+    "ai_product_type": "Industrial Textiles",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Monics 2 Core Fiber Optic Cable 5.8 mm with yarn & 2 frp": {
+    "ai_product_type": "Cables & Wires",
+    "ai_material": "Fiber Optic Cable",
+    "ai_use_case": null,
+    "ai_business_role": "Supplier"
+  },
+  "Jute Yarn": {
+    "ai_product_type": "Textiles",
+    "ai_material": "Jute",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Yarn Evenness Tester": {
+    "ai_product_type": "Test Equipment",
+    "ai_material": null,
+    "ai_use_case": "Quality Testing",
+    "ai_business_role": "Supplier"
+  },
+  "Semi Automatic Electric Jacquard Looms For Supplying Weft Yarns, 380 V": {
+    "ai_product_type": "Textile Machinery",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Polyester Monofilament Yarn": {
+    "ai_product_type": "Textile Raw Materials",
+    "ai_material": "Polyester",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Nylon 66 LOY Yarn": {
+    "ai_product_type": "Textile Raw Materials",
+    "ai_material": "Nylon 66",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Yarn Dyed Scarf": {
+    "ai_product_type": "Textiles",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "YARN WINDING M-C": {
+    "ai_product_type": "Textile Machinery",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Mixed PA & PET Airbags Scrap Fabric + Yarn Scrap": {
+    "ai_product_type": "Industrial Textiles",
+    "ai_material": "PA & PET",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Blanket Weft Yarn": {
+    "ai_product_type": "Textile Raw Materials",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Yarn Dyed Twill Suiting Fabric": {
+    "ai_product_type": "Industrial Textiles",
+    "ai_material": null,
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Poly Spandex Yarn Dyed Fabric": {
+    "ai_product_type": "Textiles",
+    "ai_material": "Spandex",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "White Ceramic Yarn": {
+    "ai_product_type": "Textile Machinery",
+    "ai_material": "Ceramic",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Jute Spun Yarn": {
+    "ai_product_type": "Textile Raw Materials",
+    "ai_material": "Jute",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Yarn Dyed Cotton Shirting Fabric": {
+    "ai_product_type": "Industrial Textiles",
+    "ai_material": "Cotton",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  },
+  "Ceramic Fabric Reinforced With Glass Yarns": {
+    "ai_product_type": "Industrial Textiles",
+    "ai_material": "Ceramic and Glass Yarns",
+    "ai_use_case": "Textile Manufacturing",
+    "ai_business_role": "Supplier"
+  }
+}
