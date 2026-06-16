@@ -155,6 +155,12 @@ To run (requires LM Studio open with Qwen 2.5 7B loaded):
 python src/ai_enrichment.py
 ```
 
+**Why a local model instead of a cloud API:**
+- **Data privacy** — B2B supplier data, pricing, and sourcing intelligence is commercially sensitive. Sending it to an external API means it could be logged, retained, or used for training. A local model keeps the data entirely on-premise.
+- **Zero cost** — No per-token charges. Processing 348 product records with a cloud API at scale adds up; a local model runs at no marginal cost per query.
+- **No rate limits** — Cloud APIs throttle batch workloads. A local model processes at full speed without hitting quotas.
+- **Reproducibility** — The same model version always produces the same output. Cloud API models get updated silently, which can break pipelines that depend on consistent extraction behavior.
+
 ---
 
 ## Analysis Modules
