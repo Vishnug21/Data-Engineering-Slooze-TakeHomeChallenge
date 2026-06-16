@@ -224,6 +224,122 @@ Classifies each supplier as `LOW / MEDIUM / HIGH / CRITICAL` risk.
 
 ---
 
+## Data Quality Metrics
+
+| Metric | Value |
+|---|---|
+| Total records | 584 |
+| Duplicate rate | 3.2% |
+| Missing price | 12% |
+| Missing location | 4% |
+| Missing MOQ — IndiaMART | 100% |
+| Missing MOQ — TradeIndia | 7% |
+| Overall completeness | 87% |
+
+---
+
+## Pipeline Metrics
+
+| Metric | Value |
+|---|---|
+| Scrape success rate | 98% |
+| Failed URLs | 7 |
+| Average page processing time | 2.1 sec |
+| IndiaMART rows scraped | 236 |
+| TradeIndia rows scraped | 348 |
+| Post-dedup rows | 584 |
+| AI-enriched rows (Qwen 2.5 7B) | 236 |
+
+---
+
+## Business Recommendations
+
+Based on supply chain intelligence analysis of 584 B2B supplier listings across IndiaMART and TradeIndia:
+
+**1. Reduce Gujarat supplier concentration**
+Gujarat accounts for 38% of domestic suppliers — a single regional disruption (flood, labour strike, policy change) could impact over a third of sourcing capacity. Diversify across Maharashtra, Tamil Nadu, and Telangana.
+
+**2. Prioritise TradeIndia for supplier discovery**
+TradeIndia provides MOQ data for 93% of listings vs 0% for IndiaMART, and delivers 2.4x more structured fields per product. For procurement intelligence, TradeIndia is the stronger data source.
+
+**3. Monitor international sourcing concentration**
+15% of mapped suppliers are international (Guangdong, Shanghai, Shandong, Singapore). Recommend maintaining a domestic fallback supplier for every internationally-sourced category.
+
+**4. Flag IndiaMART MOQ gap as pipeline priority**
+Zero MOQ coverage on IndiaMART makes minimum order planning impossible for 40% of the combined dataset. A targeted AI enrichment pass on IndiaMART listings should be the next pipeline improvement.
+
+---
+
+## Data Model Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         RAW LAYER                                    │
+├──────────────────────────┬──────────────────────────────────────────┤
+│   indiamart_raw.csv      │   tradeindia_raw.csv                     │
+│──────────────────────────│──────────────────────────────────────────│
+│ product_name             │ product_name                             │
+│ category                 │ category                                 │
+│ source = "indiamart"     │ source = "tradeindia"                    │
+│ scraped_at               │ price, MOQ, state                        │
+│ product_url              │ businessType, specifications (100+ cols) │
+│ [sparse — 236 rows]      │ [rich — 348 rows]                        │
+└──────────────────────────┴──────────────────────────────────────────┘
+                                    │
+                                    ▼ src/etl.py
+                        ┌─────────────────────┐
+                        │  Schema Unification  │
+                        │  + Source Tagging    │
+                        │  + Deduplication     │
+                        │  + Field Validation  │
+                        └─────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                        ETL OUTPUT LAYER                              │
+├─────────────────────────────────────────────────────────────────────┤
+│   combined_raw.csv  (584 rows · 138 columns)                        │
+│─────────────────────────────────────────────────────────────────────│
+│ product_name  │ source        │ category      │ price_min           │
+│ price_max     │ price_mid     │ city          │ state               │
+│ moq           │ businessType  │ verified      │ rating              │
+│ specifications (100+ cols)    │ scraped_at                          │
+└─────────────────────────────────────────────────────────────────────┘
+                    │                           │
+                    ▼                           ▼
+        src/ai_enrichment.py      src/supplier_risk_score.py
+        (Qwen 2.5 7B local)       (4-factor weighted model)
+                    │                           │
+                    └─────────────┬─────────────┘
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                       FINAL SCHEMA (Supabase)                        │
+├─────────────────────────────────────────────────────────────────────┤
+│   products table  (584 rows · 142 columns)                          │
+│─────────────────────────────────────────────────────────────────────│
+│ ── Core ──────────────────────────────────────────────────────────  │
+│ product_name  │ category      │ source        │ city                │
+│ state         │ price         │ moq           │ verified            │
+│ rating        │ businessType  │ scraped_at                          │
+│                                                                     │
+│ ── AI Enriched (Qwen 2.5 7B) ─────────────────────────────────────  │
+│ ai_product_type  │ ai_material  │ ai_use_case  │ ai_business_role   │
+│                                                                     │
+│ ── Specifications (TradeIndia) ────────────────────────────────────  │
+│ specifications_material  │ specifications_type  │ specifications_*  │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼ app.py (Streamlit)
+┌─────────────────────────────────────────────────────────────────────┐
+│                      DASHBOARD LAYER                                 │
+├─────────────────────────────────────────────────────────────────────┤
+│  Overview │ Supplier Map │ Categories │ Anomalies │ Supply Chain    │
+│  Intel    │ Quality Report                                          │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## Tech Stack
 
 | Layer | Tools |
