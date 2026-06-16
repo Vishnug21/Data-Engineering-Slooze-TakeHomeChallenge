@@ -10,7 +10,7 @@ Vishnu Gopal · vishnu.gopal@skypoint.ai · [github.com/Vishnug21](https://githu
 End-to-end supply chain data pipeline that scrapes B2B product listings from two Indian marketplaces, unifies them into a 584-row dataset, stores it in a cloud database, and surfaces actionable supply chain insights through an interactive dashboard.
 
 **Live Dashboard:** https://data-engineering-slooze-takehomechallenge-4wxr8tkpljjd36mt7g24.streamlit.app  
-**Live Database:** Supabase PostgreSQL · 584 rows · 138 columns
+**Live Database:** Supabase PostgreSQL · 584 rows · 142 columns
 
 ---
 
